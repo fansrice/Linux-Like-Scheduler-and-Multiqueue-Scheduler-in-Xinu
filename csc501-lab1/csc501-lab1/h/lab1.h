@@ -1,0 +1,12 @@
+#define DEFAULT 0
+#define LINUXSCHED 1
+#define MULTIQSCHED 2
+extern int realhead;
+extern int realtail;
+extern int  getschedclass();
+extern void setschedclass(int);
+extern void calculateGoodness(int);
+extern int findMaxGoodnessProcess();
+extern int findMultiMaxGoodnessProcess();
+extern int schedulerType;
+extern int goodness[100];

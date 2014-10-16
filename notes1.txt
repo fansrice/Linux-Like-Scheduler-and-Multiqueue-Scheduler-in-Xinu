@@ -1,0 +1,1 @@
+Tests 3 and 4 failed previously. This patch fixes both of them. The error was caused due to a simple condition missing in two of the if statements.

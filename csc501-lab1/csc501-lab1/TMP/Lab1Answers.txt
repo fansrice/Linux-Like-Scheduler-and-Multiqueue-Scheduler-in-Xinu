@@ -1,0 +1,17 @@
+Advantages and disadvantages of the original XINU scheduling policy:
+
+It is based on priority. So, higher priority processes will get to finish executing as soon as possible.
+
+However, this leads to starvation of the lower priority processes which may, in some extreme cases, never even get to execute.
+
+Advantages and disadvantages of the Linux-like scheduling policy:
+
+While it is also based on priority, it is not completely dependent on it. This also places emphasis on the time quantum associated with each process that dictates how long it is allowed to execute before it is pre-empted for another process. This results in a scheduler that doesn't cause starvation of the lower priority processes, which also get to execute, albeit for a smaller time slice.
+
+This policy does not differentiate between real-time and normal processes. All processes are placed into the same queue which may cause blocking of some very important and significant real-time applications.
+
+Advantages and disadvantages of the Multi-queue scheduling policy:
+
+Since it has two queues, one each for real-time and normal processes, it can dispatch real-time processes immediately 70% of the time, resulting in a much more efficient scheduler when we have processes of different types.
+
+If all processes are real-time processes, however, since the scheduling policy used is Round-Robin, it can result in a relatively inefficient manner of dispatch of real-time processes.
